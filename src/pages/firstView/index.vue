@@ -38,7 +38,7 @@
   }
 </script>
 
-<style lang="stylus"  type="text/stylus">
+<style lang="stylus"  rel="stylesheet/stylus">
 
   #firstViewContainer
     width 100%

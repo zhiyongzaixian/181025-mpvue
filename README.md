@@ -1,37 +1,14 @@
-# mpvue_test
-
-> A Mpvue project
-
-## Build Setup
-
-``` bash
-# 初始化项目
-vue init mpvue/mpvue-quickstart myproject
-cd myproject
-
-# 安装依赖
-yarn
-
-# 开发时构建
-npm dev
-
-# 打包构建
-npm build
-
-# 指定平台的开发时构建(微信、百度、头条、支付宝)
-npm dev:wx
-npm dev:swan
-npm dev:tt
-npm dev:my
-
-# 指定平台的打包构建
-npm build:wx
-npm build:swan
-npm build:tt
-npm build:my
-
-# 生成 bundle 分析报告
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# mpvue
+## 什么是mpvue 
+  1. 比较火的框架: mpvue(美团), wepy(腾讯)
+  2. 基于vue.js开发小程序
+  
+## mpvue特点
+  1. 可以使用vue的语法进行开发
+  2. 兼容小程序的生命周期函数，除非特殊情况，不建议使用小程序的生命周期函数
+  3. 在mpvue中既可以使用vue.js的语法同时也可以使用原生小程序提供的组件以及api(swiper, 路由跳转)
+  4. 在页面中定义json文件的时候: main.json
+## mpvue启动流程
+  1. app.json ---> app.json
+  2. app.vue ---> app.js + app.wxss
+  3. main.js ---> App() || Page() 挂载当前实例对象
