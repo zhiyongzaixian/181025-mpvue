@@ -12,3 +12,8 @@
   1. app.json ---> app.json
   2. app.vue ---> app.js + app.wxss
   3. main.js ---> App() || Page() 挂载当前实例对象
+  
+## 发送ajax请求的方式
+  1. 原生
+  2. axios， fetch 在window的环境下
+  3. flyio 支持很多平台
