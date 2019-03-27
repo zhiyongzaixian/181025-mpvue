@@ -3,6 +3,8 @@
   export default {}
 </script>
 
-<style>
-
+<style lang="stylus"  type="text/stylus">
+  page
+    width 100%
+    height 100%
 </style>

@@ -1,5 +1,11 @@
 {
   "pages": [
-    "pages/index/main"
-  ]
+    "pages/firstView/main",
+    "pages/books/main"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#02a774",
+    "navigationBarTitleText": "硅谷书城",
+    "navigationBarTextStyle":"black"
+  }
 }

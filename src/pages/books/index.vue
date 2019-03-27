@@ -1,6 +1,6 @@
 <template>
   <div>
-    index组件。。。
+    books组件
   </div>
 </template>
 
@@ -8,6 +8,6 @@
   export default {}
 </script>
 
-<style>
+<style lang="stylus" rel="stylesheet/stylus">
 
 </style>
