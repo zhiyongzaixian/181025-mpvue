@@ -8,7 +8,7 @@
     <div class="booksList">
       <div class="nav">
         <span>全部商品</span>
-        <span class="more"> > </span>
+        <span class="more" @click="toList"> > </span>
       </div>
       <ul class="list">
         <li @click="toDetail(item)" v-for="(item, index) in booksList" :key="index">
@@ -41,6 +41,11 @@
       toDetail(bookItem){
         wx.navigateTo({
           url: '/pages/detail/main?bookItem=' + JSON.stringify(bookItem)
+        })
+      },
+      toList(){
+        wx.navigateTo({
+          url: '/pages/list/main?booksList=' + JSON.stringify(this.booksList)
         })
       }
     }

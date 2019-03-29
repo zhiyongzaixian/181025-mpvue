@@ -4,14 +4,20 @@
       <input @confirm="handleConfirm" v-model="searchContent" type="text" confirm-type="搜索" placeholder="书中自有黄金屋" placeholder-class="placeholder">
     </div>
     <!--列表组件-->
-
+    <div v-if="booksList.length">
+      <BookList :booksList="booksList"/>
+    </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
   import request from '../../utils/request'
+  import BookList from '../list/index.vue'
   export default {
+    components: {
+      BookList
+    },
     data(){
       return {
         searchContent: '',
@@ -21,16 +27,9 @@
     methods: {
       async handleConfirm(){
         let req = this.searchContent
-        this.booksList = await request('/searchBooks', {req});
-        console.log(result);
-//        axios.get('http://localhost:3000/searchBooks')
-//          .then(function (response) {
-//            console.log(response);
-//            // 修改promise实例的状态成功
-//          })
-//          .catch(function (error) {
-//            console.log(error);
-//          });
+        let result = await request('/searchBooks', {req});
+        console.log(typeof result.data, result.data);
+        this.booksList = result.data;
       }
     }
   }

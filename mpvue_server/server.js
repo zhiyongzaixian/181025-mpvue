@@ -27,6 +27,21 @@ router.get('/searchBooks', async (ctx, next) => {
   
 });
 
+// 开发者的密钥，密钥动态生成
+const appKey = '4a9ed63ce3ff7701485a2ccb27dd1ba1';
+// 开发者的appId
+const appId = 'wx0db5ac6ea2aca4fe';
+
+router.get('/getOpenId', async (ctx, next) => {
+  // 获取请求参数
+  let code = ctx.query.code;
+  let url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appKey}&js_code=${code}&grant_type=authorization_code`
+  // 对接微信接口
+  let result = await get(url);
+  console.log(result.data, typeof result.data);
+  ctx.body = JSON.parse(result.data).openid;
+})
+
 
 app
   .use(router.routes()) // 声明使用路由
